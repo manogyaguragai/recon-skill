@@ -22,7 +22,9 @@ attacks them in that order.
 
 ## Stages
 
-Each is independently callable. Enter wherever you are.
+Each is independently callable. Enter wherever you are — or run
+`/recon:recon` and it will read your saved state and pick up wherever you
+left off, including a brand-new run if you have never used it before.
 
 | Command | Does |
 |---|---|
