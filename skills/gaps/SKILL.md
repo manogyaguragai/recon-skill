@@ -13,6 +13,10 @@ one inventory field reflows every target at once. A user who finally sits a
 language test should see three blocked targets flip to viable in a single run.
 That recompute is the product.
 
+Stamp `stages.gaps.last_run` with the current ISO 8601 timestamp (date and time, e.g. `2026-07-20T14:32:00Z`) in `recon.json` at
+the end of every run — this records only that `gaps` ran, never the computed
+gaps themselves, which stay recomputed-only as above.
+
 ## Compute age at the deadline
 
 Never against today. Store date of birth, evaluate against each opportunity's

@@ -99,5 +99,7 @@ an essay. Answer what was asked before adding anything. This moment is the
 highest-leverage point in the whole process and the most commonly fumbled -
 usually by being too eager, too long, or too slow.
 
-Record everything in `outreach`. It is what makes later analysis possible, with
-the honesty caveat that small samples do not support strong conclusions.
+Record everything in `outreach`, stamping `stages.outreach.last_run` with the
+current ISO 8601 timestamp (date and time, e.g. `2026-07-20T14:32:00Z`) in the same write. It is what makes later analysis
+possible, with the honesty caveat that small samples do not support strong
+conclusions.
