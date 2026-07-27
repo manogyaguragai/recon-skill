@@ -41,10 +41,12 @@ Or just describe your situation and the right stage loads itself.
 
 **Claude Code**
 
-```bash
-git clone https://github.com/manogyaguragai/recon-skill.git
-claude --plugin-dir ./recon
 ```
+/plugin marketplace add manogyaguragai/recon-skill
+/plugin install recon@recon-plugins
+```
+
+To get updates later: `/plugin marketplace update recon-plugins`.
 
 **Claude.ai** - upload the skill files, keep your `recon.json` in a Project so
 it loads automatically each session.

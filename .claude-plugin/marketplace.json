@@ -1,0 +1,15 @@
+{
+  "name": "recon-plugins",
+  "owner": {
+    "name": "Manogya Guragai",
+    "email": "manogyaguragai24@gmail.com",
+    "url": "https://github.com/manogyaguragai"
+  },
+  "plugins": [
+    {
+      "name": "recon",
+      "source": "./",
+      "description": "Research + connect. Find fully funded masters/PhD opportunities worldwide, identify who to actually contact, and write outreach that does not smell synthetic."
+    }
+  ]
+}
