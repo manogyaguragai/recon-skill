@@ -82,8 +82,9 @@ to a reader who knows the field.
 
 ### 5. Write state
 
-Write `recon.json`. In Claude.ai, emit it as a downloadable file and tell the
-user to keep it, ideally in a Project so it loads automatically next time.
+Write `recon.json`, stamping `stages.profile.last_run` with the current ISO 8601 timestamp (date and time, e.g. `2026-07-20T14:32:00Z`) in the same write. In Claude.ai, emit it as a downloadable file and
+tell the user to keep it, ideally in a Project so it loads automatically next
+time.
 
 ## Partial is fine
 

@@ -15,9 +15,10 @@ mass produced. Recon attacks those three failures in that order.
 
 ## Stages
 
-Each stage is independently callable. Do not force a user through all of them
-in order. Read the state file first, work out where they actually are, and
-enter there.
+Each stage is independently callable directly (`/recon:profile`,
+`/recon:scout`, etc.) — a user who knows where they are can always jump
+straight there. Do not force a user through all of them in order when they
+invoke a specific stage by name.
 
 | Stage | Command | Takes | Produces |
 |---|---|---|---|
@@ -32,6 +33,57 @@ If a user invokes a later stage without the earlier data, do not refuse. Run
 with what exists and state plainly what could not be checked. Partial state is
 valid state. Getting someone a first useful answer beats blocking them behind
 a form.
+
+## Entry point: `/recon:recon`
+
+This dispatcher activates only on the literal `/recon:recon` invocation —
+not on freeform messages. A message that describes a specific need (e.g.
+"what am I missing", "who should I email") should still match the relevant
+stage's own description and enter that stage directly, exactly as today;
+state-based resolution below is not a substitute for that.
+
+When `/recon:recon` is invoked, decide which single stage to run next and
+enter it, using `stages.*.last_run` in `recon.json` (see
+`references/schema.md`). If `recon.json` does not exist yet, create it with
+the full schema skeleton — every `stages.*.last_run` is `null` — before
+resolving.
+
+Resolve in this fixed order — `profile → scout → target → gaps → outreach →
+roadmap` — using these three cases, checked in sequence:
+
+1. **Incomplete first pass.** If any stage has `last_run: null`, enter the
+   earliest such stage. A brand-new user (every `last_run` null) and a
+   returning user who stopped partway resolve identically — there is no
+   separate new-vs-returning branch, just "earliest stage never run."
+2. **Stale stage.** Otherwise, if any stage's `last_run` is older than an
+   earlier stage's `last_run` (in the fixed order above), enter the earliest
+   such stale stage. Say plainly why, e.g. "Your inventory changed after
+   `scout` last ran — reflowing scout first." Since every stage stamps its
+   own `last_run` in the same write as any data it owns, a stage is never
+   stale relative to its own output — staleness only ever points at a stage
+   *later* in the order than the one whose data just changed.
+3. **Current.** Otherwise, enter `roadmap` — the standing "here's where
+   things are" view once nothing is stale.
+
+## Auto-chain
+
+When resolution lands on a stage because of case 1 or case 2 above, do not
+stop after that single stage. On its completion, re-run the resolution and
+continue into whatever it selects next, within the same conversation — no
+re-invocation needed — until resolution reaches case 3 (at which point stop;
+do not re-enter `roadmap` if it is the stage that just completed) or a stage
+pauses for input it does not have.
+
+Two stages structurally pause the chain rather than completing in one pass:
+
+- `profile` pauses whenever it is waiting on documents or answers it does
+  not have yet.
+- `outreach` pauses to ask which contact to draft for — it acts on one
+  contact at a time and cannot be auto-run in a batch the way `scout` or
+  `gaps` can.
+
+Resume the chain from wherever it paused once the user supplies what was
+missing.
 
 ## State
 
