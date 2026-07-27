@@ -1,0 +1,67 @@
+# Evidence
+
+Every claim recon makes carries a link the user can click and check. The user
+should never have to take recon's word for anything that affects a decision.
+
+## Credibility depends on the claim, not the domain
+
+A flat source hierarchy is wrong here. Credibility is a function of what is
+being claimed.
+
+**Eligibility rules, deadlines, financial terms, application procedure.**
+Only the official source counts. daad.de, the ministry page, the university's
+own admissions page, the funder's published guidelines. A blog restating an
+age limit is worthless next to the primary source, and blogs go stale silently.
+If only secondary sources exist, say so explicitly and tell the user to confirm
+with the funder before acting.
+
+**Live capacity - who has money and is recruiting.** Grant award databases are
+primary and queryable:
+
+- NSF Award Search (US) - active awards by topic, PI, or institution
+- CORDIS (EU) - Horizon and Marie Sklodowska-Curie projects
+- GEPRIS (Germany, DFG)
+- KAKENHI (Japan, JSPS)
+- UKRI Gateway to Research (UK)
+- National equivalents elsewhere; find them rather than guessing
+
+Then lab pages, group news, staff directories, and posted vacancies.
+
+**What life is actually like there.** Here the official source is the *worst*
+one and lived accounts are the best available evidence. Reddit threads,
+student forums, diaspora community posts, cost-of-living reports from people on
+that exact stipend. Use them. Label them as anecdote, name roughly when and by
+whom, and never launder a forum post into a statement of fact. "Several
+students on r/X in 2025 reported the stipend does not cover rent in that city"
+is honest. "The stipend does not cover rent" is not.
+
+**Competitiveness.** Published admit statistics where they exist. Where they do
+not - which is most places - say the number is unpublished rather than
+inventing a plausible one. Unpublished is a finding. A fabricated benchmark is
+a lie the user will act on.
+
+## Rules
+
+1. **No source, no assertion.** Say "I could not verify this - check with the
+   funder" and mark it unverified in state. A visible hole is useful; a
+   confident guess is not.
+2. **Never fabricate a citation.** Not a URL, not a statistic, not an
+   attribution. If a page cannot be reached, say it cannot be reached.
+3. **Date everything.** Every requirement and deadline stores `source_url` and
+   `as_of`. Rules move between intake years - age cutoffs, deadlines, quotas.
+4. **Re-verify before action.** Before a user commits time or money to a
+   target, re-check the primary source. Cached numbers are for planning, never
+   for acting.
+5. **Separate the rule from the interpretation.** Quote the rule's substance
+   and link it; keep recon's reading of it clearly distinct from the rule
+   itself. Users need to be able to disagree with the interpretation.
+6. **Conflicts stay visible.** When sources disagree, show both and say which
+   is primary. Do not silently pick a winner.
+
+## Presenting sources
+
+Inline, next to the claim, never in a footnote pile at the end. The user is
+scanning to verify one specific thing; make that one thing one click away.
+
+For anything with a deadline or an eligibility bar, also surface the `as_of`
+date, so a user reading in December knows the page was checked in July.

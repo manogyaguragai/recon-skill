@@ -1,0 +1,85 @@
+# recon
+
+**Research + connect.** Find fully funded masters and PhD opportunities
+worldwide, work out who to actually contact, and write outreach that does not
+read as machine written.
+
+Built for people chasing funded places with a stipend, from anywhere, without
+paying an agent.
+
+## Why
+
+Most funded places are lost to three things, in this order: bad targeting,
+invisible eligibility rules, and outreach that reads mass produced. Recon
+attacks them in that order.
+
+- **Targeting** - country funding systems are different games, not variations.
+  The same profile is strong in one and structurally weak in another.
+- **Eligibility** - a three-year bachelor, a degree awarded seven years ago, or
+  an age cutoff can bar someone permanently, and nobody tells them.
+- **Outreach** - faculty now filter for machine-written mail. A bad email does
+  not fail neutrally; it burns the contact invisibly.
+
+## Stages
+
+Each is independently callable. Enter wherever you are.
+
+| Command | Does |
+|---|---|
+| `/recon:profile` | Builds your evidence-backed inventory |
+| `/recon:scout` | Which countries and funding systems are worth playing |
+| `/recon:target` | Named people and programmes, with proof they are live |
+| `/recon:gaps` | What is missing, ranked by how much it unblocks |
+| `/recon:outreach` | Drafts that survive a human reading them |
+| `/recon:roadmap` | Deadline-backwards plan per opportunity |
+
+Or just describe your situation and the right stage loads itself.
+
+## Install
+
+**Claude Code**
+
+```bash
+git clone https://github.com/USER/recon.git
+claude --plugin-dir ./recon
+```
+
+**Claude.ai** - upload the skill files, keep your `recon.json` in a Project so
+it loads automatically each session.
+
+## Your data
+
+Everything lives in one file, `recon.json`, in your working directory. Plain
+JSON. Git-trackable, diffable, portable, yours. No browser storage, no hidden
+caches, nothing platform-specific.
+
+In Claude.ai, recon hands you the updated file at the end of each session.
+
+## Principles
+
+**Evidence or silence.** Every claim carries a link you can click. Nothing is
+asserted from memory. If it cannot be sourced, it says so.
+
+**Nothing unverified reaches a real person.** Facts are marked by provenance,
+and only document-backed or link-verified facts can be claimed in an email.
+
+**Recon never sends.** It drafts. You read it and send it. The gap between
+those two is where you catch the thing that would have embarrassed you.
+
+**Honest volume.** A well-crafted personalised cold email gets a reply roughly
+10-20% of the time. Recon will not imply better, and a non-reply does not mean
+you did something wrong.
+
+**Discovery is uncapped, engagement is tiered.** The odds are better where
+nobody is looking. But a hundred targets is a hundred hours, and recon says so
+before you commit.
+
+## Not a spam tool
+
+Recon will refuse to produce a draft it cannot ground in something specific and
+true. If there is no real hook, it says to read more or drop the target. That
+is the feature.
+
+## License
+
+MIT.

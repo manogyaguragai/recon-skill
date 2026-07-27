@@ -1,0 +1,15 @@
+{
+  "name": "recon",
+  "version": "0.1.0",
+  "description": "Research + connect. Find fully funded masters/PhD opportunities worldwide, identify who to actually contact, and write outreach that does not smell synthetic.",
+  "license": "MIT",
+  "keywords": [
+    "scholarships",
+    "phd",
+    "masters",
+    "funding",
+    "academia",
+    "cold-email",
+    "study-abroad"
+  ]
+}
