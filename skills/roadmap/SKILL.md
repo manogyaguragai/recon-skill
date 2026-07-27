@@ -76,3 +76,7 @@ The visual is generated from `recon.json`, not authored by hand each run - see
 `scripts/render_dashboard.py`. The dashboard is a renderer over state and is
 disposable. Regenerate it freely; never treat it as the source of truth and
 never let a user edit it expecting the change to persist.
+
+Stamp `stages.roadmap.last_run` with the current ISO 8601 timestamp (date and time, e.g. `2026-07-20T14:32:00Z`) in `recon.json`
+at the end of every run — the dashboard itself stays disposable and
+unstored, as above; only the timestamp is new.

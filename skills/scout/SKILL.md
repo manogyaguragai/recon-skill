@@ -67,4 +67,5 @@ non-university research institutes, field-specific foundations, regional
 awards, and small-quota schemes with tiny applicant pools.
 
 Write the chosen systems to `recon.json` under `systems`, each with its
-evidence links, and hand off to `target`.
+evidence links, stamp `stages.scout.last_run` with the current ISO 8601 timestamp (date and time, e.g. `2026-07-20T14:32:00Z`) in
+the same write, and hand off to `target`.
