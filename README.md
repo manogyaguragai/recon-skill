@@ -40,7 +40,7 @@ Or just describe your situation and the right stage loads itself.
 **Claude Code**
 
 ```bash
-git clone https://github.com/USER/recon.git
+git clone https://github.com/manogyaguragai/recon-skill.git
 claude --plugin-dir ./recon
 ```
 
