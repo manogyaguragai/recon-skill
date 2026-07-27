@@ -9,6 +9,14 @@ it back. Anything a stage cannot verify is omitted or marked, never guessed.
 {
   "version": "0.1",
   "updated": "2026-07-27",
+  "stages": {
+    "profile":  { "last_run": null },
+    "scout":    { "last_run": null },
+    "target":   { "last_run": null },
+    "gaps":     { "last_run": null },
+    "outreach": { "last_run": null },
+    "roadmap":  { "last_run": null }
+  },
   "inventory": {},
   "preferences": {},
   "systems": [],
@@ -20,6 +28,38 @@ it back. Anything a stage cannot verify is omitted or marked, never guessed.
 ```
 
 ---
+
+## stages
+
+Tracks whether each stage has run, independent of whatever that stage does
+or does not persist elsewhere. `gaps` never stores its computed output and
+`roadmap` never stores its dashboard — `last_run` is the only record either
+stage leaves behind, and it is what lets `/recon:recon` route a user without
+forcing them through every stage in order.
+
+Each stage stamps its own `last_run` with a full ISO 8601 timestamp —
+date **and** time, e.g. `2026-07-20T14:32:00Z` — in the same write where it
+saves any other data it owns (`profile` → `inventory`, `scout` →
+`preferences`/`systems`, `target` → `opportunities`/`contacts`, `outreach` →
+`outreach`). `gaps` and `roadmap` stamp `last_run` with nothing else
+changing, since they own no persisted section. Nothing but the owning stage
+— or `/recon:recon`, when it creates a fresh `recon.json` for a brand-new
+user — ever writes to this object.
+
+Date-only is not enough: two updates on the same day must still compare
+correctly, and the dispatcher's staleness check (`skills/recon/SKILL.md`)
+depends on that. For example:
+
+```json
+{
+  "profile":  { "last_run": "2026-07-01T09:00:00Z" },
+  "scout":    { "last_run": "2026-07-02T14:15:00Z" },
+  "target":   { "last_run": null },
+  "gaps":     { "last_run": null },
+  "outreach": { "last_run": null },
+  "roadmap":  { "last_run": null }
+}
+```
 
 ## Provenance
 
