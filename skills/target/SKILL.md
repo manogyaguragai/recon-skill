@@ -96,3 +96,8 @@ State the real cost when presenting: a hundred targets is not a hundred emails,
 it is a hundred hours, because doing it properly means reading several papers
 per person. Let the user set wave size with that number in front of them.
 Never hide tier C and never half-do tier A.
+
+## Write state
+
+Write `opportunities` and `contacts` to `recon.json`, stamping
+`stages.target.last_run` with the current ISO 8601 timestamp (date and time, e.g. `2026-07-20T14:32:00Z`) in the same write.
