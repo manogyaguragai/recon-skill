@@ -7,7 +7,7 @@ it back. Anything a stage cannot verify is omitted or marked, never guessed.
 
 ```json
 {
-  "version": "0.1",
+  "version": "0.2",
   "updated": "2026-07-27",
   "stages": {
     "profile":  { "last_run": null },
@@ -134,6 +134,19 @@ Recon proposes systems from the inventory; the user adds and removes freely.
 Never silently drop a user's stated preference - if their choice is a poor fit,
 say why with evidence and keep it in the list.
 
+## systems
+
+Country or funding-system entries `scout` proposes and the user
+accepts. `systems.md` describes the doctrine behind these entries, not
+a JSON shape; this schema fixes one shared field:
+
+`sources[]` - optional. The live discovery surfaces `scout` already
+checked for this country, each as `{ "class": "...", "surface": "..."
+}` matching `sources.md`. `scout` records this in the same write as the
+system itself; `target` checks it before searching for a class fresh,
+so it reuses what `scout` already found instead of rediscovering the
+same boards.
+
 ## opportunities
 
 Scholarships, grants, programmes, funded positions, industrial doctorates,
@@ -152,7 +165,8 @@ employer-funded routes. Not professor-shaped - `funder_type` is one of
   "deadlines": [],
   "life": {},
   "tier": "A",
-  "matched_field": null
+  "matched_field": null,
+  "discovered_via": { "class": "primary_funder", "surface": "mext.go.jp" }
 }
 ```
 
@@ -160,6 +174,12 @@ employer-funded routes. Not professor-shaped - `funder_type` is one of
 field-breadth search in a field adjacent to the user's primary stated
 field (`preferences.field`). `null` for opportunities found the ordinary
 way.
+
+`discovered_via` - the source class and specific surface this entry
+was found through, e.g. `{ "class": "primary_funder", "surface":
+"mext.go.jp" }`. `class` is one of the nine slugs listed near the top
+of `sources.md`. Exists so `expand` can compute which classes are
+already represented and which are not.
 
 **signal.type** - two kinds, decaying differently:
 
@@ -225,9 +245,14 @@ Promote C to B to A on request and in waves. Never hide C. Never half-do A.
   "published_filters": [],
   "hooks": [],
   "status": "live",
-  "dead_reason": null
+  "dead_reason": null,
+  "discovered_via": { "class": "bibliographic", "surface": "openalex.org" }
 }
 ```
+
+`discovered_via` - the source class and specific surface this contact
+was found through, same shape and purpose as `opportunities`'
+`discovered_via` above.
 
 `published_filters[]` - instructions the person has published for prospective
 students. Required subject line, do-not-email policy, application form to use
