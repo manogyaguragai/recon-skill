@@ -181,3 +181,5 @@ Read these when the relevant stage needs them; do not load all of them up front.
   loop, what makes a draft fail
 - `references/systems.md` - how funding actually works in different countries,
   and why the same profile is strong in one system and weak in another
+- `references/sources.md` - discovery surfaces organised by funding
+  model, from vacancy boards to applicant-side national schemes
