@@ -6,8 +6,9 @@ description: Map which countries and funding systems are actually worth pursuing
 # recon: scout
 
 Decides which games are worth playing before any effort goes into individual
-targets. Read `../recon/references/systems.md` and
-`../recon/references/evidence.md` first.
+targets. Read `../recon/references/systems.md`,
+`../recon/references/evidence.md`, and `../recon/references/sources.md`
+first.
 
 ## Propose, then let the user steer
 
@@ -66,6 +67,16 @@ industrial doctorates, bilateral agreements involving the user's country,
 non-university research institutes, field-specific foundations, regional
 awards, and small-quota schemes with tiny applicant pools.
 
+`sources.md` names where these under-searched routes
+actually turn up: the catalogue class for programmes proper, the
+primary-funder class for government and bilateral schemes, and the
+applicant-side national class for the user's own ministry and embassy
+lists - the most under-searched surface of all.
+
 Write the chosen systems to `recon.json` under `systems`, each with its
 evidence links, stamp `stages.scout.last_run` with the current ISO 8601 timestamp (date and time, e.g. `2026-07-20T14:32:00Z`) in
 the same write, and hand off to `target`.
+
+Record the discovery surfaces checked for each system as
+`systems[].sources[]` (`schema.md`), so `target` does not have to
+rediscover them.
