@@ -25,6 +25,9 @@ primary and queryable:
 - UKRI Gateway to Research (UK)
 - National equivalents elsewhere; find them rather than guessing
 
+See `sources.md` for the fuller discovery-surface registry beyond
+capacity databases.
+
 Then lab pages, group news, staff directories, and posted vacancies.
 
 **What life is actually like there.** Here the official source is the *worst*
@@ -65,6 +68,16 @@ a lie the user will act on.
    itself. Users need to be able to disagree with the interpretation.
 6. **Conflicts stay visible.** When sources disagree, show both and say which
    is primary. Do not silently pick a winner.
+7. **Aggregators are discovery surfaces, never citations.** A catalogue
+   listing a deadline is not a source for that deadline. Resolve every
+   aggregator hit to its primary source before writing anything to
+   `source_url`. If the primary cannot be found, record the requirement
+   as unverified rather than letting the aggregator link stand in.
+8. **Paid-service sources are never cited.** Sites whose business model
+   is selling application or agent services are never cited, and
+   scholarship aggregators carrying figures with no traceable primary
+   are treated as unverified. Recon exists so people do not need to pay
+   an agent; citing one would undercut the tool's own purpose.
 
 ## Presenting sources
 
