@@ -6,8 +6,8 @@ description: Search for candidates not yet on a candidate's saved list, or do mo
 # recon: expand
 
 Adds to what `scout` and `target` already found - never replaces it. Read
-`../recon/references/schema.md` and `../recon/references/evidence.md`
-first.
+`../recon/references/schema.md`, `../recon/references/evidence.md`, and
+`../recon/references/sources.md` first.
 
 ## Not a stage
 
@@ -104,6 +104,14 @@ toward `university`, hunt specifically for `industry`, `bilateral`,
 `foundation`, `employer` routes - consistently under-searched compared with
 the academic route.
 
+**Coverage-gap mode.** Diff `discovered_via` across saved opportunities
+and contacts against the classes in `sources.md`. Name the classes that
+are absent and search those first - "everything on file came from two
+catalogues; no national grant database or bilateral agreement has been
+touched" is the kind of finding this produces. An entry with no
+`discovered_via` predates the field and is unknown, not absent - do not
+count it as a gap.
+
 ## Person-research fetch discipline
 
 Both `target` and this skill's contacts dimension research real people -
@@ -130,6 +138,10 @@ If the user wants to reconsider something previously excluded in
 something this skill automates - never silently override a prior "no."
 
 ## Write state
+
+Every breadth addition to `opportunities[]` or `contacts[]` also
+records `discovered_via` (`schema.md`), matching `sources.md`'s
+classes.
 
 Writes to `systems[]` or `preferences.regions/countries` stamp
 `stages.scout.last_run` with the current ISO 8601 timestamp (date and
