@@ -46,7 +46,15 @@ a lie the user will act on.
    funder" and mark it unverified in state. A visible hole is useful; a
    confident guess is not.
 2. **Never fabricate a citation.** Not a URL, not a statistic, not an
-   attribution. If a page cannot be reached, say it cannot be reached.
+   attribution. If a page cannot be reached, say it cannot be reached -
+   this applies with special force to person research (LinkedIn, staff
+   directories, lab pages): attempt the fetch, cap retries at one, fall
+   back to a cheaper public source before trying a heavier fetch again,
+   never fill in a role or institution from memory when a fetch fails, and
+   tell the user plainly when something could not be verified. Prefer the
+   cheapest sufficient source generally; do not run an exhaustive fetch
+   pass over every candidate when a lighter check already confirms what is
+   needed.
 3. **Date everything.** Every requirement and deadline stores `source_url` and
    `as_of`. Rules move between intake years - age cutoffs, deadlines, quotas.
 4. **Re-verify before action.** Before a user commits time or money to a
