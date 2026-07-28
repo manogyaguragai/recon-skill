@@ -44,7 +44,9 @@ saves any other data it owns (`profile` → `inventory`, `scout` →
 `outreach`). `gaps` and `roadmap` stamp `last_run` with nothing else
 changing, since they own no persisted section. Nothing but the owning stage
 — or `/recon:recon`, when it creates a fresh `recon.json` for a brand-new
-user — ever writes to this object.
+user, or `/recon:expand`, when it adds data to a section `scout` or
+`target` owns and stamps that stage's `last_run` accordingly — ever writes
+to this object.
 
 Date-only is not enough: two updates on the same day must still compare
 correctly, and the dispatcher's staleness check (`skills/recon/SKILL.md`)
@@ -149,9 +151,15 @@ employer-funded routes. Not professor-shaped - `funder_type` is one of
   "financials": {},
   "deadlines": [],
   "life": {},
-  "tier": "A"
+  "tier": "A",
+  "matched_field": null
 }
 ```
+
+`matched_field` - set only when this opportunity was found via a
+field-breadth search in a field adjacent to the user's primary stated
+field (`preferences.field`). `null` for opportunities found the ordinary
+way.
 
 **signal.type** - two kinds, decaying differently:
 
