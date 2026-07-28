@@ -37,6 +37,24 @@ left off, including a brand-new run if you have never used it before.
 
 Or just describe your situation and the right stage loads itself.
 
+## `/recon:expand`
+
+Not a stage — a standing command for when you already have a scouted list
+of countries or a targeted list of scholarships and contacts, and want
+more.
+
+- **Breadth** - search for candidates not yet on your list: new countries,
+  new scholarships, new professors, or fields and funder types you haven't
+  considered.
+- **Depth** - do more research on what's already saved: verify a stale
+  link, add a specific outreach hook, confirm a signal is still live, or
+  move something from the unresearched long tail toward a full dossier.
+
+Ask for either, or both, across any of four things: locations,
+scholarships, contacts, or field/funder-type breadth. `/recon:expand`
+never removes or overwrites what's already there — it only adds and
+strengthens.
+
 ## Install
 
 **Claude Code**
