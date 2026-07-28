@@ -34,6 +34,11 @@ with what exists and state plainly what could not be checked. Partial state is
 valid state. Getting someone a first useful answer beats blocking them behind
 a form.
 
+Separately, `/recon:expand` widens or deepens any saved list on demand -
+new countries, new scholarships, new contacts, or more research on ones
+already saved. It is not part of this order and this dispatcher never
+routes into it.
+
 ## Entry point: `/recon:recon`
 
 This dispatcher activates only on the literal `/recon:recon` invocation —
