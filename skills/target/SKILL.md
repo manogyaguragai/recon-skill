@@ -6,8 +6,9 @@ description: Find the specific opportunities and named people worth contacting f
 # recon: target
 
 Turns chosen systems into named opportunities and named people, each with
-evidence that it is live. Read `../recon/references/schema.md` and
-`../recon/references/evidence.md` first.
+evidence that it is live. Read `../recon/references/schema.md`,
+`../recon/references/evidence.md`, and `../recon/references/sources.md`
+first.
 
 ## Two signal classes, decaying differently
 
@@ -97,7 +98,24 @@ it is a hundred hours, because doing it properly means reading several papers
 per person. Let the user set wave size with that number in front of them.
 Never hide tier C and never half-do tier A.
 
+## Coverage
+
+Check `systems[].sources[]` first - surfaces `scout` already found
+there for this system count toward the classes below without
+rechecking.
+
+Before completing, confirm at least one surface was reached from each
+of: vacancy board, capacity database, primary funder, structured
+programme, institute-direct, and applicant-side national
+(`sources.md`). Report any class that could not be covered, and why.
+
+Reach at least one surface not listed in `sources.md`. That file is a
+floor - stopping at it reproduces the narrow search this stage exists
+to avoid.
+
 ## Write state
 
 Write `opportunities` and `contacts` to `recon.json`, stamping
 `stages.target.last_run` with the current ISO 8601 timestamp (date and time, e.g. `2026-07-20T14:32:00Z`) in the same write.
+Every new entry records `discovered_via` - the source class and surface
+it came from (`schema.md`).
