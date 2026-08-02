@@ -7,6 +7,16 @@ read as machine written.
 Built for people chasing funded places with a stipend, from anywhere, without
 paying an agent.
 
+## Use it in the Claude UI (claude.ai)
+
+No CLI needed. In the Claude web/desktop app:
+
+1. Go to **Settings → Plugins → Add → Add marketplace**.
+2. Choose **Add from a repository** and paste: `https://github.com/manogyaguragai/recon-skill`
+3. Tick **Sync automatically**, then click **Sync**.
+4. Click the **+** icon next to **recon** to enable it.
+5. Type `/recon` in a chat to start.
+
 ## Why
 
 Most funded places are lost to three things, in this order: bad targeting,
